@@ -1,2 +1,2 @@
-# mbazin-style-deco
-MB Stlye Déco 
+# mbazin-style
+

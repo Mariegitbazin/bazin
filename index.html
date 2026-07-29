@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MB Style - Déco Extérieure</title>
+<title>MB Style | Produits digitaux</title>
 <!-- Tailwind CSS CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- Google Fonts -->
@@ -59,7 +59,7 @@ body {
 <a href="#" class="hover:opacity-70">Y</a>
 </div>
 <div class="hidden md:block">
-<span>DÉCORATION DE JARDIN • AMBIANCE UNIQUE • SÉLECTION AMAZON</span>
+<span id="topBarText">MB Style • Produits Digitaux</span>
 </div>
 </div>
 
@@ -95,6 +95,16 @@ MB <span class="block md:inline-block font-normal text-gray-500">Style</span>
 </button>
 <span id="favCount" class="absolute -top-1 -right-1 bg-black text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold">0</span>
 </div>
+<div class="relative">
+<button onclick="toggleCart()" class="p-2 focus:outline-none" aria-label="Panier">
+<svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4"></path>
+<circle cx="9" cy="19" r="1.5"></circle>
+<circle cx="17" cy="19" r="1.5"></circle>
+</svg>
+</button>
+<span id="cartCount" class="absolute -top-1 -right-1 bg-black text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold">0</span>
+</div>
 </div>
 </div>
 </header>
@@ -111,56 +121,56 @@ MB <span class="block md:inline-block font-normal text-gray-500">Style</span>
 <nav id="sideMenu" class="fixed inset-y-0 left-0 transform -translate-x-full transition-transform duration-300 ease-in-out z-40 w-80 bg-[#fcdcd3] p-6 shadow-2xl overflow-y-auto flex flex-col justify-between pt-24">
 <div class="space-y-6">
 <button onclick="showPage('home')" class="block w-full text-left serif-title text-2xl font-bold hover:translate-x-2 transition-transform">Accueil</button>
-<button onclick="showPage('shop')" class="block w-full text-left serif-title text-2xl font-bold hover:translate-x-2 transition-transform">Sélection Amazon</button>
-<button onclick="filterCategory('all')" class="block w-full text-left serif-title text-2xl font-bold hover:translate-x-2 transition-transform">Toutes les Pièces</button>
+<button onclick="showPage('shop')" class="block w-full text-left serif-title text-2xl font-bold hover:translate-x-2 transition-transform">Produits digitaux</button>
+<button onclick="filterCategory('all')" class="block w-full text-left serif-title text-2xl font-bold hover:translate-x-2 transition-transform">Tous les produits</button>
 <hr class="border-black opacity-20">
 <div class="space-y-4">
-<p class="text-xs tracking-widest uppercase font-bold text-gray-600">Catégories Déco</p>
+<p class="text-xs tracking-widest uppercase font-bold text-gray-600">Catégories produits</p>
 <div class="flex flex-wrap gap-2">
-<button onclick="filterDiet('ÉCLAIRAGE')" class="px-3 py-1 bg-white border border-gray-300 text-xs font-bold rounded-full">Éclairage (EC)</button>
-<button onclick="filterDiet('SOLAIRE')" class="px-3 py-1 bg-white border border-gray-300 text-xs font-bold rounded-full">Solaire (SO)</button>
-<button onclick="filterDiet('TERRASSE')" class="px-3 py-1 bg-white border border-gray-300 text-xs font-bold rounded-full">Terrasse (TE)</button>
-<button onclick="filterDiet('PRATIQUE')" class="px-3 py-1 bg-white border border-gray-300 text-xs font-bold rounded-full">Pratique (PR)</button>
+<button onclick="filterDiet('TEMPLATES')" class="px-3 py-1 bg-white border border-gray-300 text-xs font-bold rounded-full">Templates</button>
+<button onclick="filterDiet('GUIDES')" class="px-3 py-1 bg-white border border-gray-300 text-xs font-bold rounded-full">Guides</button>
+<button onclick="filterDiet('PACKS')" class="px-3 py-1 bg-white border border-gray-300 text-xs font-bold rounded-full">Packs</button>
+<button onclick="filterDiet('CANVA')" class="px-3 py-1 bg-white border border-gray-300 text-xs font-bold rounded-full">Canva</button>
 </div>
 </div>
 </div>
 <div class="text-xs text-gray-600 mt-12 border-t border-black border-opacity-10 pt-4">
-<p>© 2026 MB Style Déco.</p>
+<p>© 2026 MB Style.</p>
 </div>
 </nav>
 
 <!-- Conteneur Principal -->
 <main class="flex-grow max-w-6xl w-full mx-auto px-4 py-8">
-<!-- PAGE : ACCUEIL & ÉLÉMENTS DE DÉCO -->
+<!-- PAGE : ACCUEIL & ÉLÉMENTS DE LA BOUTIQUE -->
 <section id="page-home" class="space-y-12">
-<!-- Hero Featured Post (Guirlande lumineuse extérieure) -->
-<div class="bg-white border border-gray-200 overflow-hidden shadow-sm grid grid-cols-1 md:grid-cols-2 gap-6 cursor-pointer" onclick="openRecipe('guirlande')">
-<div class="relative h-64 md:h-full min-h-[300px]">
-<img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1200&q=80" alt="[Guirlande Solaire Lumineuse d'Extérieur]" class="absolute inset-0 w-full h-full object-cover">
+<!-- Hero Featured Post (Produit numérique à vendre) -->
+<div class="bg-white border border-gray-200 overflow-hidden shadow-sm grid grid-cols-1 md:grid-cols-2 gap-6 cursor-pointer" onclick="openRecipe('pack-canva')">
+<div class="relative h-64 md:h-full min-h-[300px] overflow-hidden">
+<img src="IMG_9168.PNG" alt="[MB Style Boutique]" class="absolute inset-0 w-full h-full object-cover">
 </div>
 <div class="p-6 md:p-12 flex flex-col justify-center space-y-4">
 <div class="flex space-x-1">
-<span class="category-badge bg-[#c2593f]">EC</span>
-<span class="category-badge bg-[#3dc1d3]">SO</span>
-<span class="category-badge bg-[#596275]">TE</span>
+<span class="category-badge bg-[#c2593f]">TP</span>
+<span class="category-badge bg-[#3dc1d3]">CN</span>
+<span class="category-badge bg-[#596275]">MK</span>
 </div>
-<h2 class="serif-title text-3xl md:text-4xl font-bold leading-tight hover:underline">
-Guirlande Solaire Lumineuse G40
+<h2 id="heroTitle" class="serif-title text-3xl md:text-4xl font-bold leading-tight hover:underline">
+MB Style Produits Digitaux
 </h2>
 <div class="flex items-center space-x-1 text-yellow-500">
 <span>★★★★★</span>
-<span class="text-xs text-gray-500 font-bold ml-2">4.89 de 124 votes</span>
+<span class="text-xs text-gray-500 font-bold ml-2">4.95 de 146 votes</span>
 </div>
-<p class="text-gray-600 text-sm leading-relaxed">
-Créez une atmosphère guinguette chaleureuse sur votre terrasse. Guirlande étanche de 15m équipée de 25 ampoules LED rétro, entièrement alimentée par un panneau solaire à haut rendement.
+<p id="heroDescription" class="text-gray-600 text-sm leading-relaxed">
+Découvrez des produits numériques prêts à être vendus et à enrichir votre boutique MB Style.
 </p>
-<span class="inline-block text-xs font-bold tracking-widest uppercase border-b-2 border-black pb-1 self-start">Voir les détails techniques</span>
+<span id="heroCtaText" class="inline-block text-xs font-bold tracking-widest uppercase border-b-2 border-black pb-1 self-start">Découvrir les produits</span>
 </div>
 </div>
 
 <!-- Liste des produits secondaires -->
 <div>
-<h3 class="serif-title text-2xl font-bold border-b border-gray-200 pb-4 mb-6">Sélection Décoration Extérieure</h3>
+<h3 id="productsHeading" class="serif-title text-2xl font-bold border-b border-gray-200 pb-4 mb-6">Produits numériques à vendre</h3>
 <div id="recipes-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
 </div>
 </section>
@@ -168,14 +178,14 @@ Créez une atmosphère guinguette chaleureuse sur votre terrasse. Guirlande éta
 <!-- PAGE : BOUTIQUE -->
 <section id="page-shop" class="hidden space-y-12">
 <div class="text-center max-w-xl mx-auto space-y-4">
-<h2 class="serif-title text-3xl font-bold tracking-widest uppercase">Catégories Jardin</h2>
+<h2 id="shopTitle" class="serif-title text-3xl font-bold tracking-widest uppercase">Catégories Produits Digitaux</h2>
 <div class="w-16 h-1 bg-black mx-auto"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center text-sm font-semibold tracking-widest uppercase">
 <button onclick="filterShop('all')" class="py-3 border-b-2 border-black hover:bg-gray-50">Toutes</button>
-<button onclick="filterShop('eclairage')" class="py-3 border-b border-gray-200 hover:bg-gray-50">Lumières</button>
-<button onclick="filterShop('ombrage')" class="py-3 border-b border-gray-200 hover:bg-gray-50">Ombrages</button>
-<button onclick="filterShop('pratique')" class="py-3 border-b border-gray-200 hover:bg-gray-50">Pratiques</button>
+<button onclick="filterShop('templates')" class="py-3 border-b border-gray-200 hover:bg-gray-50">Templates</button>
+<button onclick="filterShop('guides')" class="py-3 border-b border-gray-200 hover:bg-gray-50">Guides</button>
+<button onclick="filterShop('packs')" class="py-3 border-b border-gray-200 hover:bg-gray-50">Packs</button>
 </div>
 <p class="text-center text-xs tracking-widest text-gray-500 uppercase mt-4" id="shop-results-count">Affichage de 1-4 de 4 résultats</p>
 <div id="shop-grid" class="grid grid-cols-1 md:grid-cols-4 gap-8 pt-6"></div>
@@ -209,362 +219,125 @@ Créez une atmosphère guinguette chaleureuse sur votre terrasse. Guirlande éta
 <!-- PAGE : FAVORIS -->
 <section id="page-favorites" class="hidden space-y-8">
 <div class="text-center max-w-xl mx-auto space-y-4">
-<h2 class="serif-title text-3xl font-bold">Votre liste d'idées déco</h2>
-<p class="text-sm text-gray-500">Conservez ici vos coups de cœur Amazon pour l'aménagement extérieur.</p>
+<h2 id="favoritesTitle" class="serif-title text-3xl font-bold">Votre liste d'idées produits</h2>
+<p id="favoritesDescription" class="text-sm text-gray-500">Conservez ici les produits numériques qui vous inspirent pour votre boutique.</p>
 </div>
 <div id="favorites-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
 </section>
 </main>
+
+<!-- Section Contact -->
+<section id="contact" class="bg-[#f9f7f4] border border-gray-200 mt-12 p-8 md:p-12 rounded-xl">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <div class="text-center space-y-3">
+      <p class="text-xs font-bold uppercase tracking-widest text-gray-500">Restons en contact</p>
+      <h2 id="contactTitle" class="serif-title text-3xl md:text-4xl font-bold">Contactez-nous pour vos offres digitales</h2>
+      <p id="contactDescription" class="text-sm text-gray-600 max-w-2xl mx-auto">Une question sur un produit, une offre ou la mise en place de votre boutique digitale ? Envoyez-nous un message, nous vous répondons rapidement.</p>
+    </div>
+    <form class="contact-form grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="space-y-3">
+        <label class="text-xs uppercase tracking-widest text-gray-600">Nom</label>
+        <input type="text" name="name" required class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black">
+      </div>
+      <div class="space-y-3">
+        <label class="text-xs uppercase tracking-widest text-gray-600">Email</label>
+        <input type="email" name="email" required class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black">
+      </div>
+      <div class="md:col-span-2 space-y-3">
+        <label class="text-xs uppercase tracking-widest text-gray-600">Message</label>
+        <textarea name="message" rows="5" required class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black"></textarea>
+      </div>
+      <div class="md:col-span-2 flex justify-end">
+        <button type="submit" class="btn-black-outline px-8 py-3 text-xs font-bold uppercase tracking-wider">Envoyer le message</button>
+      </div>
+    </form>
+  </div>
+</section>
 
 <!-- Footer -->
 <footer class="bg-white border-t border-gray-200 py-12 mt-12 px-4">
 <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
 <div class="space-y-4">
 <h2 class="serif-title text-xl font-bold italic transform -rotate-1">MB Style</h2>
-<p class="text-xs text-gray-500 leading-relaxed">
-Sélection esthétique et fonctionnelle pour transformer vos jardins et terrasses avec le meilleur d'Amazon.
+<p id="footerText" class="text-xs text-gray-500 leading-relaxed">
+Une sélection de produits numériques prêts à être vendus et à enrichir votre boutique MB Style.
 </p>
 </div>
 <div class="space-y-3">
 <h4 class="text-xs font-bold tracking-widest uppercase">Navigation</h4>
 <ul class="text-xs text-gray-600 space-y-2">
 <li><a href="#" onclick="showPage('home')" class="hover:underline">Accueil</a></li>
-<li><a href="#" onclick="showPage('shop')" class="hover:underline">Boutique Amazon</a></li>
-<li><a href="#" class="hover:underline">Contact</a></li>
+<li><a href="#" onclick="showPage('shop')" class="hover:underline">Boutique digitale</a></li>
+<li><a href="#contact" class="contact-link hover:underline">Contact</a></li>
 </ul>
 </div>
 <div class="space-y-3">
-<h4 class="text-xs font-bold tracking-widest uppercase">Inspirations déco par email</h4>
+<h4 id="newsletterTitle" class="text-xs font-bold tracking-widest uppercase">Offres digitales par email</h4>
 <div class="flex">
-<input type="email" placeholder="Votre email" class="border border-gray-300 px-3 py-2 text-xs w-full focus:outline-none focus:border-black">
-<button class="bg-black text-white px-4 text-xs font-bold uppercase tracking-wider">S'abonner</button>
+<input id="subscribeEmail" type="email" placeholder="Votre email" class="border border-gray-300 px-3 py-2 text-xs w-full focus:outline-none focus:border-black">
+<button type="button" class="subscribe-btn bg-black text-white px-4 text-xs font-bold uppercase tracking-wider">S'abonner</button>
 </div>
 </div>
 </div>
 </footer>
 
+<!-- Panier -->
+<div id="cartOverlay" class="fixed inset-0 bg-black/60 hidden z-[60]">
+  <div class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl p-6 overflow-y-auto">
+    <div class="flex justify-between items-center mb-6">
+      <h3 class="serif-title text-2xl font-bold">Votre panier</h3>
+      <button onclick="toggleCart()" class="text-sm font-semibold uppercase tracking-wider text-gray-500 hover:text-black">Fermer</button>
+    </div>
+    <div id="cartItems" class="space-y-3"></div>
+    <div class="mt-6 border-t border-gray-200 pt-4 space-y-4">
+      <div class="flex justify-between text-sm font-semibold">
+        <span>Total</span>
+        <span id="cartTotal">0 €</span>
+      </div>
+      <button onclick="showCheckout()" class="w-full bg-black text-white py-3 text-xs font-bold uppercase tracking-wider hover:bg-gray-800">Passer la commande</button>
+    </div>
+  </div>
+</div>
+
+<!-- Formulaire de commande -->
+<div id="checkoutModal" class="fixed inset-0 bg-black/60 hidden z-[70] flex items-center justify-center p-4">
+  <div class="w-full max-w-xl bg-white shadow-2xl p-6 md:p-8 overflow-y-auto max-h-[90vh]">
+    <div class="flex justify-between items-center mb-6">
+      <h3 class="serif-title text-2xl font-bold">Finaliser la commande</h3>
+      <button onclick="closeCheckout()" class="text-sm font-semibold uppercase tracking-wider text-gray-500 hover:text-black">Fermer</button>
+    </div>
+    <div id="checkoutSummary" class="mb-6 space-y-2 text-sm text-gray-600"></div>
+    <form id="checkoutForm" class="space-y-4" onsubmit="submitOrder(event)">
+      <div>
+        <label class="text-xs uppercase tracking-widest text-gray-600">Nom</label>
+        <input type="text" id="checkoutName" required class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black">
+      </div>
+      <div>
+        <label class="text-xs uppercase tracking-widest text-gray-600">Email</label>
+        <input type="email" id="checkoutEmail" required class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black">
+      </div>
+      <div>
+        <label class="text-xs uppercase tracking-widest text-gray-600">Mode de paiement</label>
+        <select id="checkoutPayment" class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black">
+          <option value="Virement bancaire">Virement bancaire</option>
+          <option value="Carte de crédit">Carte de crédit</option>
+          <option value="PayPal">PayPal</option>
+          <option value="WhatsApp">WhatsApp</option>
+        </select>
+      </div>
+      <div>
+        <label class="text-xs uppercase tracking-widest text-gray-600">Message</label>
+        <textarea id="checkoutMessage" rows="4" class="w-full border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:border-black"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-black text-white py-3 text-xs font-bold uppercase tracking-wider hover:bg-gray-800">Envoyer la commande</button>
+    </form>
+  </div>
+</div>
+
 <!-- Système de message personnalisé -->
 <div id="toast" class="fixed bottom-4 right-4 bg-black text-white text-xs font-bold uppercase tracking-wider py-3 px-6 shadow-xl hidden z-50"></div>
 
-<script>
-const recipes = [
-{
-  id: "guirlande",
-  title: "Guirlande Solaire Lumineuse G40 15m",
-  rating: "4.89",
-  votes: "124",
-  diets: ["ÉCLAIRAGE", "SOLAIRE", "TERRASSE"],
-  image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
-  description: "Une magnifique guirlande d'extérieur de 15 mètres idéale pour instaurer un esprit guinguette magique.",
-  ingredients: [
-    "25 ampoules LED G40 rétro (incassables)",
-    "Alimentation 100% solaire, pas de prise nécessaire",
-    "Panneau solaire orientable fourni",
-    "Norme d'étanchéité extérieure IP65",
-    "Batterie intégrée longue durée (8h à 10h d'autonomie)"
-  ],
-  instructions: [
-    "Déballez soigneusement la guirlande et testez le panneau solaire à l'ombre en couvrant le capteur.",
-    "Fixez le panneau solaire dans un endroit exposé au soleil direct (exposition Sud recommandée).",
-    "Suspendez la guirlande à l'aide des crochets intégrés au-dessus de votre terrasse ou pergola.",
-    "Activez le bouton d'alimentation à l'arrière du panneau solaire.",
-    "La guirlande s'allumera automatiquement chaque soir à la tombée de la nuit."
-  ]
-},
-{
-  id: "balises",
-  title: "Balises Solaires d'Allée (Lot de 12)",
-  rating: "4.75",
-  votes: "98",
-  diets: ["ÉCLAIRAGE", "SOLAIRE", "PRATIQUE"],
-  image: "https://images.unsplash.com/photo-1508849789987-4e5333c12b78?auto=format&fit=crop&w=800&q=80",
-  description: "Balisez élégamment vos allées, massifs de fleurs ou chemins d'accès grâce à ces balises solaires robustes.",
-  ingredients: [
-    "Lot complet de 12 balises en acier inoxydable",
-    "LED blanc chaud à effet motif géométrique au sol",
-    "Capteurs solaires automatiques jour/nuit",
-    "Piquets de sol robustes inclus",
-    "Résistant aux intempéries (IP44)"
-  ],
-  instructions: [
-    "Assemblez le piquet de sol avec le corps de chaque balise lumineuse.",
-    "Retirez la languette isolante sous le capot pour activer la batterie intégrée.",
-    "Enfoncez fermement le piquet dans une terre meuble le long de vos passages extérieurs.",
-    "Veillez à ce que les têtes solaires ne soient pas masquées par des feuilles ou des branches."
-  ]
-},
-{
-  id: "voile",
-  title: "Voile d'Ombrage Triangulaire 3x3x3m",
-  rating: "4.67",
-  votes: "84",
-  diets: ["TERRASSE", "PRATIQUE"],
-  image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80",
-  description: "Protégez-vous efficacement du soleil tout en apportant une touche géométrique moderne à votre terrasse.",
-  ingredients: [
-    "Toile en polyéthylène haute densité (HDPE) 185g/m2",
-    "Bloque 95% des rayons UV nocifs",
-    "Anneaux en acier inoxydable solide à chaque angle",
-    "Cordes de fixation résistantes fournies",
-    "Tissu respirant laissant passer l'air sans accumuler de chaleur"
-  ],
-  instructions: [
-    "Déterminez trois points de fixation solides (murs, poteaux ou arbres).",
-    "Prévoyez une inclinaison de 20 à 40 degrés pour assurer l'écoulement des eaux de pluie.",
-    "Attachez les cordes fournies aux anneaux métalliques et tendez fermement la toile.",
-    "Ajustez la tension régulièrement pour éviter que la voile ne batte au vent."
-  ]
-}
-];
-
-const shopItems = [
-{
-  title: "Brasero Extérieur en Acier Noir",
-  category: "pratique",
-  price: "$129.99",
-  image: "https://images.unsplash.com/photo-1616137422495-1e9e46e2aa77?auto=format&fit=crop&w=400&q=80",
-  actionText: "Acheter sur Amazon"
-},
-{
-  title: "Lot de 12 Balises Solaires Premium",
-  category: "eclairage",
-  price: "$29.99",
-  image: "https://images.unsplash.com/photo-1508849789987-4e5333c12b78?auto=format&fit=crop&w=400&q=80",
-  actionText: "Acheter sur Amazon"
-},
-{
-  title: "Voile d'Ombrage Sable 3x3x3m",
-  category: "ombrage",
-  price: "$19.99",
-  image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=400&q=80",
-  actionText: "Acheter sur Amazon"
-},
-{
-  title: "Guirlande Guinguette Solaire 15m G40",
-  category: "eclairage",
-  price: "$24.99",
-  image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=400&q=80",
-  actionText: "Acheter sur Amazon"
-}
-];
-
-let favorites = JSON.parse(localStorage.getItem('mb_favorites')) || [];
-
-function showPage(pageId) {
-document.getElementById('page-home').classList.add('hidden');
-document.getElementById('page-shop').classList.add('hidden');
-document.getElementById('recipe-detail').classList.add('hidden');
-document.getElementById('page-favorites').classList.add('hidden');
-document.getElementById(`page-${pageId}`).classList.remove('hidden');
-window.scrollTo({ top: 0, behavior: 'smooth' });
-document.getElementById('sideMenu').classList.add('-translate-x-full');
-if (pageId === 'home') {
-  renderRecipes(recipes);
-} else if (pageId === 'shop') {
-  renderShop(shopItems);
-} else if (pageId === 'favorites') {
-  renderFavorites();
-}
-}
-
-function renderRecipes(items) {
-const grid = document.getElementById('recipes-grid');
-grid.innerHTML = '';
-items.forEach(recipe => {
-  const isFav = favorites.includes(recipe.id);
-  const recipeCard = document.createElement('div');
-  recipeCard.className = "bg-white border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between";
-  recipeCard.innerHTML = `
-    <div class="cursor-pointer" onclick="openRecipe('${recipe.id}')">
-      <div class="h-48 overflow-hidden relative">
-        <img src="${recipe.image}" alt="[${recipe.title}]" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-      </div>
-      <div class="p-6 space-y-3">
-        <div class="flex flex-wrap gap-1">
-          ${recipe.diets.map(diet => `<span class="category-badge bg-black text-[9px]">${diet.substring(0, 2)}</span>`).join('')}
-        </div>
-        <h4 class="serif-title text-xl font-bold hover:underline leading-tight">${recipe.title}</h4>
-        <div class="flex items-center text-xs text-yellow-500">
-          <span>★★★★★</span>
-          <span class="text-gray-500 font-semibold ml-2">(${recipe.votes})</span>
-        </div>
-      </div>
-    </div>
-    <div class="px-6 pb-6 pt-2 flex justify-between items-center border-t border-gray-100">
-      <button onclick="openRecipe('${recipe.id}')" class="text-xs font-bold uppercase tracking-wider border-b border-black pb-0.5">Détails de la pièce</button>
-      <button onclick="toggleFavorite('${recipe.id}')" class="focus:outline-none" aria-label="Ajouter aux favoris">
-        <svg class="w-6 h-6 ${isFav ? 'text-red-500 fill-current' : 'text-gray-400 hover:text-red-500'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-        </svg>
-      </button>
-    </div>
-  `;
-  grid.appendChild(recipeCard);
-});
-}
-
-function renderShop(items) {
-const grid = document.getElementById('shop-grid');
-grid.innerHTML = '';
-document.getElementById('shop-results-count').innerText = `Affichage de 1-${items.length} de ${items.length} résultats`;
-items.forEach(product => {
-  const productCard = document.createElement('div');
-  productCard.className = "bg-white border border-gray-200 p-4 flex flex-col justify-between shadow-sm text-center";
-  productCard.innerHTML = `
-    <div>
-      <div class="h-48 bg-gray-50 flex items-center justify-center overflow-hidden mb-4">
-        <img src="${product.image}" alt="[${product.title}]" class="object-cover max-h-full max-w-full hover:scale-105 transition-transform">
-      </div>
-      <h4 class="text-sm font-semibold text-gray-800 mb-2">${product.title}</h4>
-      <p class="text-gray-500 text-xs tracking-wider font-bold mb-4">${product.price}</p>
-    </div>
-    <button class="btn-black-outline w-full py-2.5 text-xs">${product.actionText}</button>
-  `;
-  grid.appendChild(productCard);
-});
-}
-
-function renderFavorites() {
-const grid = document.getElementById('favorites-grid');
-grid.innerHTML = '';
-const favItems = recipes.filter(r => favorites.includes(r.id));
-if (favItems.length === 0) {
-  grid.innerHTML = '<p class="text-center text-sm text-gray-500 col-span-3 py-12">Aucun produit favori sauvegardé pour le moment.</p>';
-  return;
-}
-favItems.forEach(recipe => {
-  const card = document.createElement('div');
-  card.className = "bg-white border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between";
-  card.innerHTML = `
-    <div class="cursor-pointer" onclick="openRecipe('${recipe.id}')">
-      <img src="${recipe.image}" class="w-full h-48 object-cover" alt="[${recipe.title}]">
-      <div class="p-6">
-        <h4 class="serif-title text-xl font-bold hover:underline leading-tight">${recipe.title}</h4>
-      </div>
-    </div>
-    <div class="px-6 pb-6">
-      <button onclick="toggleFavorite('${recipe.id}'); renderFavorites();" class="text-xs text-red-500 font-bold hover:underline">Retirer de la liste d'idées</button>
-    </div>
-  `;
-  grid.appendChild(card);
-});
-}
-
-function handleSearch(term) {
-const filtered = recipes.filter(r =>
-  r.title.toLowerCase().includes(term.toLowerCase()) ||
-  r.description.toLowerCase().includes(term.toLowerCase())
-);
-renderRecipes(filtered);
-}
-
-function filterDiet(diet) {
-const filtered = recipes.filter(r => r.diets.includes(diet));
-renderRecipes(filtered);
-showPage('home');
-}
-
-function filterCategory(cat) {
-if (cat === 'all') {
-  renderRecipes(recipes);
-}
-showPage('home');
-}
-
-function filterShop(category) {
-if (category === 'all') {
-  renderShop(shopItems);
-} else {
-  const filtered = shopItems.filter(item => item.category === category);
-  renderShop(filtered);
-}
-}
-
-function openRecipe(id) {
-const recipe = recipes.find(r => r.id === id);
-if (!recipe) return;
-document.getElementById('page-home').classList.add('hidden');
-document.getElementById('recipe-detail').classList.remove('hidden');
-window.scrollTo({ top: 0, behavior: 'smooth' });
-const isFav = favorites.includes(recipe.id);
-document.getElementById('recipe-detail-header').innerHTML = `
-  <div class="flex flex-wrap gap-1">
-    ${recipe.diets.map(diet => `<span class="category-badge bg-black text-[9px]">${diet.substring(0, 2)}</span>`).join('')}
-  </div>
-  <h1 class="serif-title text-3xl md:text-5xl font-bold leading-tight text-gray-900">${recipe.title}</h1>
-  <div class="flex items-center space-x-4 pt-2">
-    <div class="flex items-center text-yellow-500">
-      <span>★★★★★</span>
-      <span class="text-xs text-gray-500 font-bold ml-2">${recipe.rating} de ${recipe.votes} votes</span>
-    </div>
-    <button onclick="toggleFavorite('${recipe.id}'); openRecipe('${recipe.id}');" class="text-xs font-bold tracking-wider uppercase border border-gray-300 px-3 py-1.5 flex items-center space-x-1 hover:bg-gray-50">
-      <svg class="w-4 h-4 ${isFav ? 'text-red-500 fill-current' : 'text-gray-400'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-      </svg>
-      <span>${isFav ? 'Sauvegardé' : 'Sauvegarder'}</span>
-    </button>
-  </div>
-  <p class="text-gray-600 italic text-sm border-t border-b border-gray-100 py-3 mt-4">${recipe.description}</p>
-`;
-document.getElementById('recipe-detail-image').src = recipe.image;
-document.getElementById('recipe-detail-image').alt = `[${recipe.title}]`;
-const ingredientsList = document.getElementById('recipe-detail-ingredients');
-ingredientsList.innerHTML = recipe.ingredients.map(ing => `<li>${ing}</li>`).join('');
-const instructionsList = document.getElementById('recipe-detail-instructions');
-instructionsList.innerHTML = recipe.instructions.map(inst => `<li>${inst}</li>`).join('');
-}
-
-function scrollToIngredients() {
-document.getElementById('recipe-content-anchor').scrollIntoView({ behavior: 'smooth' });
-}
-
-function toggleFavorite(id) {
-const index = favorites.indexOf(id);
-if (index > -1) {
-  favorites.splice(index, 1);
-  showToast("Produit retiré de vos idées déco");
-} else {
-  favorites.push(id);
-  showToast("Produit ajouté à vos idées déco !");
-}
-localStorage.setItem('mb_favorites', JSON.stringify(favorites));
-updateFavCount();
-if (!document.getElementById('page-home').classList.contains('hidden')) {
-  renderRecipes(recipes);
-}
-}
-
-function updateFavCount() {
-document.getElementById('favCount').innerText = favorites.length;
-}
-
-function toggleSearch() {
-const overlay = document.getElementById('searchOverlay');
-overlay.classList.toggle('hidden');
-if (!overlay.classList.contains('hidden')) {
-  document.getElementById('searchInput').focus();
-}
-}
-
-function showToast(message) {
-const toast = document.getElementById('toast');
-toast.innerText = message;
-toast.classList.remove('hidden');
-setTimeout(() => {
-  toast.classList.add('hidden');
-}, 3000);
-}
-
-const menuBtn = document.getElementById('menuBtn');
-const sideMenu = document.getElementById('sideMenu');
-menuBtn.addEventListener('click', () => {
-sideMenu.classList.toggle('-translate-x-full');
-});
-
-window.onload = function() {
-renderRecipes(recipes);
-updateFavCount();
-}
-</script>
+<script src="config.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
